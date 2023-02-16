@@ -1716,6 +1716,8 @@ Hardhat Network's forking functionality only works with blocks from at least spu
     // validate nonce
     const nextPendingNonce = await this._txPool.getNextPendingNonce(sender);
     const txNonce = tx.nonce;
+    
+    log("sender:", sender);
 
     const expectedNonceMsg = `Expected nonce to be ${nextPendingNonce.toString()} but got ${txNonce.toString()}.`;
     if (txNonce > nextPendingNonce) {
